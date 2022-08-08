@@ -56,9 +56,10 @@ def main():
     for k in keys:
       try:
         for username in open(args.users).readlines():
-          test(target, username.strip(), k)
-      except:
+          test(args.target, username.strip(), k)
+      except Exception as e:
         print('  [!] Unknown Key error. Skipping all usernames for %s' % k)
+        print('    %s' % e)
 
 if __name__ == '__main__':
     main()
